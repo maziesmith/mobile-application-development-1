@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingLeft="20sp"
+        tools:context=".ActivityTwo">
+
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/screen_2"
+            android:id="@+id/activity2-screen2"
+            android:paddingTop="20sp"
+            android:paddingBottom="20sp"/>
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/your_name"
+            android:id="@+id/activity2-name"
+            android:paddingTop="20sp"
+            android:paddingBottom="20sp"/>
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/your_phone"
+            android:id="@+id/activity2-phone"
+            android:paddingTop="20sp"
+            android:paddingBottom="20sp"/>
+    <TextView
+            android:layout_width="wrap_content"
+            android:id="@+id/activity2-phoneType"
+            android:layout_height="wrap_content"
+            android:text="@string/phone_type"
+            android:paddingTop="20sp"
+            android:paddingBottom="20sp"/>
+    <TextView
+            android:id="@+id/activity2-email"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/your_email"
+            android:paddingTop="20sp"
+            android:paddingBottom="20sp"/>
+
+    <CheckBox
+            android:id="@+id/activity2-agree"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="@string/i_agree"
+            android:paddingTop="20sp"
+            android:paddingBottom="20sp"/>
+
+    <Button
+            android:onClick="onActivity2SubmitButtonCLick"
+            android:id="@+id/activity2-submit"
+            android:layout_width="wrap_content"
+            android:layout_gravity="center"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="100sp"
+            android:text="@string/submit"/>
+
+</LinearLayout>

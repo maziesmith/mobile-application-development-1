@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">Exercise2</string>
+    <string name="phone_prompt">Phone</string>
+    <string name="agree">I Agree</string>
+    <string name="disagree">I Disagree</string>
+    <string name="phone_type">Phone Type</string>
+    <string name="i_agree">I Agree</string>
+    <string name="screen_2">Screen 2</string>
+    <string name="exercise_2_going_mad">Exercise 2 Going MAD!</string>
+    <string name="your_name">Your Name</string>
+    <string name="your_email">Your Email</string>
+    <string name="your_phone">Your Phone</string>
+    <string name="submit">Submit</string>
+    <string name="clear_all">Clear All</string>
+    <string name="exit">Exit</string>
+
+    <string-array name="phone">
+        <item>Home</item>
+        <item>Work</item>
+        <item>Mobile</item>
+    </string-array>
+</resources>

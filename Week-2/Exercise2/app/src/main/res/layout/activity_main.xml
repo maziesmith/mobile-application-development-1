@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/linear"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" tools:context=".MainActivity">
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:layout_width="100sp"
+            android:layout_height="100sp"
+            android:layout_gravity="left"
+            android:src="@drawable/android" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/exercise_2_going_mad"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:paddingTop="30sp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/your_name"
+            android:id="@+id/activity1-name"
+            />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/your_email"
+            android:paddingTop="30sp"
+            android:id="@+id/activity1-email"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:paddingTop="30sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+
+    >
+
+
+        <EditText
+            android:layout_width="250sp"
+            android:layout_height="wrap_content"
+            android:hint="@string/your_phone"
+            android:inputType="phone"
+            android:id="@+id/activity1-phone"
+            />
+
+        <Spinner
+            android:id="@+id/activity1-spinner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:entries="@array/phone"
+            android:paddingLeft="10sp">
+        </Spinner>
+
+    </LinearLayout>
+
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:paddingTop="125sp"
+            android:gravity="bottom"
+    android:paddingBottom="10sp">
+
+        <Button
+                android:id="@+id/submit"
+                android:layout_marginLeft="20sp"
+                android:layout_width="110sp"
+                android:layout_height="50sp"
+                android:paddingRight="15sp"
+                android:text="@string/submit"
+        />
+        <Button
+                android:id="@+id/clear"
+                android:layout_width="110sp"
+                android:layout_height="50sp"
+
+
+                android:layout_marginLeft="20sp"
+                android:text="@string/clear_all"
+
+        />
+        <Button
+                android:id="@+id/exit"
+                android:layout_width="100sp"
+                android:layout_height="50sp"
+
+                android:layout_marginLeft="20sp"
+
+                android:text="@string/exit"
+        />
+
+    </LinearLayout>
+
+
+</LinearLayout>
