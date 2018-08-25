@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Exercise3</string>
+    <string name="emoj">emoj</string>
+    <string name="first_name">First Name</string>
+    <string name="last_name">Last Name</string>
+    <string name="phone">Phone</string>
+    <string name="email">Email</string>
+    <string name="swap">SWAP</string>
+    <string name="rotate">ROTATE</string>
+    <string name="restore_invoked">onRestoreInstanceState is invoked</string>
+    <string name="saveInstance_invoked">onSaveInstanceState is invoked</string>
+    <string name="email_focused">Email has focus</string>
+    <string name="email_notFocused">Email has lost focus</string>
+</resources>
