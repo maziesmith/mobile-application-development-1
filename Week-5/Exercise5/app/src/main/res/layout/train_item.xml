@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="80dp">
+
+    <LinearLayout
+        android:id="@+id/first"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:background="#6a9d38"
+        android:gravity="start"
+        android:orientation="vertical"
+        android:paddingLeft="10sp"
+        android:paddingStart="20sp">
+
+        <TextView
+            android:id="@+id/arrival_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="15dp"
+            android:text="7"
+            android:textAlignment="center"
+            android:textColor="#ffffff"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="min"
+            android:textColor="#ffffff" />
+
+        <ProgressBar
+            android:id="@+id/progress_bar_small"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/second"
+        android:layout_width="230dp"
+        android:layout_height="70dp"
+        android:layout_alignParentTop="true"
+        android:layout_toEndOf="@+id/first"
+        android:layout_toRightOf="@+id/first"
+        android:orientation="vertical"
+        android:paddingLeft="10dp"
+        android:paddingStart="15dp"
+        android:paddingTop="4sp">
+
+        <TextView
+            android:id="@+id/platform"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Artamon Platform 3" />
+
+        <TextView
+            android:id="@+id/arrival_time_m"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="14:14"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="On Time"
+            android:textColor="#6a9d38"
+            android:textSize="18sp" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/third"
+        android:layout_width="84dp"
+        android:layout_height="70dp"
+        android:layout_alignParentTop="true"
+        android:layout_toEndOf="@+id/second"
+        android:layout_toRightOf="@+id/second"
+        android:orientation="vertical"
+        android:paddingLeft="15sp"
+        android:paddingStart="15sp"
+        android:paddingTop="10sp">
+
+        <TextView
+            android:id="@+id/destination_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="15:01"
+            android:textColor="#146b82" />
+
+        <TextView
+            android:id="@+id/destination"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ahfield"
+            android:textColor="#000" />
+    </LinearLayout>
+
+</RelativeLayout>
