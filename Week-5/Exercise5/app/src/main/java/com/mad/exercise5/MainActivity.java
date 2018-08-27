@@ -1,6 +1,7 @@
 package com.mad.exercise5;
 
 import android.app.ProgressDialog;
+import android.graphics.Movie;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -15,6 +16,7 @@ import android.view.MenuItem;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -42,38 +44,22 @@ public class MainActivity extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                trains.add(new Train("Rohit Platform 3", "5", "Late", "Nepal", "15:01"));
-                trains.add(new Train("Jason Platform 3", "5", "On Time", "Nepal", "15:01"));
+                initData();
                 initRecycler();
                 mTrainAdapter.notifyDataSetChanged();
             }
         });
 
-        LinearLayout mGreenLinearLayout = findViewById(R.id.first);
-
-//        mGreenLinearLayout.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                new SpinnerRefreshGreenAsyncTask().execute();
-//            }
-//        });
-
-
-
-
     }
 
     private void initData() {
         trains.add(new Train("Artarmion Platform 3", "7", "On Time", "Ashfield", "15:01"));
-        trains.add(new Train("Sharad Platform 3", "234", "Late", "Nepal", "15:01"));
-        trains.add(new Train("Rohit Platform 3", "5", "Late", "Nepal", "15:01"));
-
         initRecycler();
     }
 
     private void initRecycler() {
         mTrainRecyclerView = findViewById(R.id.activity_main_train_recyclerview);
-        mTrainAdapter = new TrainAdapter(this,trains);
+        mTrainAdapter = new TrainAdapter(this, trains);
         RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getApplicationContext());
         mTrainRecyclerView.setLayoutManager(mLayoutManager);
         mTrainRecyclerView.setItemAnimator(new DefaultItemAnimator());
@@ -139,38 +125,5 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    private class SpinnerRefreshGreenAsyncTask extends AsyncTask<Void, Void, Void> {
-        private ProgressBar pBar = findViewById(R.id.progress_bar_small);
-//        private TextView arrivalTime = findViewById(R.id.arrival_time);
-//        private TextView mins = findViewById(R.id.mins);
-        @Override
-        protected Void doInBackground(Void... voids) {
-            try {
-                Thread.sleep(3000);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
 
-            return null;
-
-        }
-
-        @Override
-        protected void onPreExecute() {
-//            mTrainRecyclerView.setVisibility(View.INVISIBLE);
-            pBar.setVisibility(View.VISIBLE);
-        }
-
-        @Override
-        protected void onPostExecute(Void aVoid) {
-
-            pBar.setVisibility(View.INVISIBLE);
-//            mTrainRecyclerView.setVisibility(View.VISIBLE);
-
-            initData();
-            initRecycler();
-
-
-        }
-    }
 }

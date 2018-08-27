@@ -4,4 +4,5 @@
     <string name="action_delete">Delete</string>
     <string name="action_quit">Quit</string>
     <string name="action_refresh">Refresh</string>
+    <string name="refresh">Refreshing:</string>
 </resources>
