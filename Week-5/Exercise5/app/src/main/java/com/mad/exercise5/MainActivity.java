@@ -12,7 +12,9 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.LinearLayout;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -22,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
     private List<Train> trains = new ArrayList<>();
     private RecyclerView mTrainRecyclerView;
     private TrainAdapter mTrainAdapter;
-    private ProgressBar pBar;
+
 
 
 
@@ -33,6 +35,7 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+
         initData();
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
@@ -42,15 +45,29 @@ public class MainActivity extends AppCompatActivity {
                 trains.add(new Train("Rohit Platform 3", "5", "Late", "Nepal", "15:01"));
                 trains.add(new Train("Jason Platform 3", "5", "On Time", "Nepal", "15:01"));
                 initRecycler();
+                mTrainAdapter.notifyDataSetChanged();
             }
         });
+
+        LinearLayout mGreenLinearLayout = findViewById(R.id.first);
+
+//        mGreenLinearLayout.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                new SpinnerRefreshGreenAsyncTask().execute();
+//            }
+//        });
+
+
+
+
     }
 
     private void initData() {
         trains.add(new Train("Artarmion Platform 3", "7", "On Time", "Ashfield", "15:01"));
         trains.add(new Train("Sharad Platform 3", "234", "Late", "Nepal", "15:01"));
         trains.add(new Train("Rohit Platform 3", "5", "Late", "Nepal", "15:01"));
-//        mTrainAdapter.notifyDataSetChanged();
+
         initRecycler();
     }
 
@@ -77,6 +94,7 @@ public class MainActivity extends AppCompatActivity {
             case R.id.action_refresh:
 //                return true;
                 new SpinnerRefreshAsyncTask().execute();
+
             case R.id.action_delete:
 //                return true;
                 trains.clear();
@@ -89,7 +107,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private class SpinnerRefreshAsyncTask extends AsyncTask<Void, Void, Void> {
-
+        private ProgressBar pBar = findViewById(R.id.pbar);
         @Override
         protected Void doInBackground(Void... voids) {
             try {
@@ -104,14 +122,53 @@ public class MainActivity extends AppCompatActivity {
 
         @Override
         protected void onPreExecute() {
-            pBar = findViewById(R.id.pbar);
+//            mTrainRecyclerView.setVisibility(View.INVISIBLE);
             pBar.setVisibility(View.VISIBLE);
         }
 
         @Override
         protected void onPostExecute(Void aVoid) {
-//            mTrainRecyclerView.setVisibility(View.VISIBLE);
+
             pBar.setVisibility(View.INVISIBLE);
+//            mTrainRecyclerView.setVisibility(View.VISIBLE);
+            initData();
+            initRecycler();
+
+
+        }
+    }
+
+
+    private class SpinnerRefreshGreenAsyncTask extends AsyncTask<Void, Void, Void> {
+        private ProgressBar pBar = findViewById(R.id.progress_bar_small);
+//        private TextView arrivalTime = findViewById(R.id.arrival_time);
+//        private TextView mins = findViewById(R.id.mins);
+        @Override
+        protected Void doInBackground(Void... voids) {
+            try {
+                Thread.sleep(3000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+
+            return null;
+
+        }
+
+        @Override
+        protected void onPreExecute() {
+//            mTrainRecyclerView.setVisibility(View.INVISIBLE);
+            pBar.setVisibility(View.VISIBLE);
+        }
+
+        @Override
+        protected void onPostExecute(Void aVoid) {
+
+            pBar.setVisibility(View.INVISIBLE);
+//            mTrainRecyclerView.setVisibility(View.VISIBLE);
+
+            initData();
+            initRecycler();
 
 
         }

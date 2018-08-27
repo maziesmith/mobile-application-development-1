@@ -69,5 +69,9 @@ public class TrainAdapter extends RecyclerView.Adapter<TrainAdapter.ViewHolder> 
         return trains.size();
     }
 
+//    int getId(int position){
+//        return data.get(position).ID;
+//    }
+
 
 }

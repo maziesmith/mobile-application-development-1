@@ -13,6 +13,12 @@
         android:paddingLeft="10sp"
         android:paddingStart="20sp">
 
+        <ProgressBar
+            android:id="@+id/progress_bar_small"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:visibility="gone" />
         <TextView
             android:id="@+id/arrival_time"
             android:layout_width="wrap_content"
@@ -21,19 +27,18 @@
             android:text="7"
             android:textAlignment="center"
             android:textColor="#ffffff"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:visibility="visible"/>
+
+
 
         <TextView
+            android:id="@+id/mins"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="min"
-            android:textColor="#ffffff" />
-
-        <ProgressBar
-            android:id="@+id/progress_bar_small"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:visibility="gone" />
+            android:textColor="#ffffff"
+            android:visibility="visible"/>
 
 
     </LinearLayout>
