@@ -5,11 +5,12 @@
 
     <LinearLayout
         android:id="@+id/first"
-        android:layout_width="70dp"
-        android:layout_height="70dp"
+        android:layout_width="70sp"
+        android:layout_height="70sp"
         android:background="#6a9d38"
         android:gravity="start"
         android:orientation="vertical"
+        android:layout_alignParentLeft="true"
         android:paddingLeft="10sp"
         android:paddingStart="20sp">
 
@@ -37,12 +38,13 @@
 
     <LinearLayout
         android:id="@+id/second"
-        android:layout_width="230dp"
-        android:layout_height="70dp"
+        android:layout_width="230sp"
+        android:layout_height="70sp"
         android:layout_alignParentTop="true"
         android:layout_toEndOf="@+id/first"
-        android:layout_toRightOf="@+id/first"
         android:orientation="vertical"
+        android:layout_toLeftOf="@id/first"
+        android:layout_toRightOf="@id/third"
         android:paddingLeft="10dp"
         android:paddingStart="15dp"
         android:paddingTop="4sp">
@@ -73,29 +75,31 @@
 
     <LinearLayout
         android:id="@+id/third"
-        android:layout_width="84dp"
-        android:layout_height="70dp"
+        android:layout_width="84sp"
+        android:layout_height="70sp"
         android:layout_alignParentTop="true"
         android:layout_toEndOf="@+id/second"
         android:layout_toRightOf="@+id/second"
         android:orientation="vertical"
+        android:layout_alignParentEnd="true"
         android:paddingLeft="15sp"
         android:paddingStart="15sp"
-        android:paddingTop="10sp">
+        android:paddingTop="10sp"
+        android:layout_alignParentRight="true">
 
         <TextView
             android:id="@+id/destination_time"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/_15_01"
-            android:textColor="#146b82" />
+            android:textColor="@color/idk" />
 
         <TextView
             android:id="@+id/destination"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/ahfield"
-            android:textColor="#000" />
+            android:textColor="@color/whocares" />
     </LinearLayout>
 
 </RelativeLayout>

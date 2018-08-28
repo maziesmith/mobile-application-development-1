@@ -148,7 +148,6 @@ public class TrainAdapter extends RecyclerView.Adapter<TrainAdapter.ViewHolder> 
         protected void onPostExecute(Void aVoid) {
 
             holder.progressBar.setVisibility(View.GONE);
-            final Train train = trains.get(position);
             holder.arrivalTime.setVisibility(View.VISIBLE);
             holder.arrivalTime.setText(new Random().nextInt(20)+ "\n mins");
 

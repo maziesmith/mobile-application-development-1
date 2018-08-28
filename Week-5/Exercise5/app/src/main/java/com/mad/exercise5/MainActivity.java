@@ -45,15 +45,13 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 trains.add(new Train("Berowra Platform 3", "12 \nmins", "Late", "Beverly", "15:18"));
                 mTrainAdapter.notifyDataSetChanged();
-//                initRecycler();
-
+                initRecycler();
             }
         });
 
     }
 
     private void initData() {
-
             trains.add(new Train("Albion Platform 1", new Random().nextInt(20) +" \nmins", "On Time", "Allawah", "14:11"));
             trains.add(new Train("Amcliffe Platform 2", new Random().nextInt(20) +" \nmins", "Late", "Central", "14:34"));
             trains.add(new Train("Artarmion Platform 3", new Random().nextInt(20) +" \nmins", "On Time", "Ahfield", "15:01"));

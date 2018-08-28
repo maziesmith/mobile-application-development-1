@@ -4,4 +4,6 @@
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#000000</color>
     <color name="lateColor">#cf0909</color>
+    <color name="idk">#146b82</color>
+    <color name="whocares">#000</color>
 </resources>
