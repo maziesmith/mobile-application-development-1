@@ -5,4 +5,10 @@
     <string name="action_quit">Quit</string>
     <string name="action_refresh">Refresh</string>
     <string name="refresh">Refreshing:</string>
+    <string name="late">Late</string>
+    <string name="_7_mins">7 mins</string>
+    <string name="artamon_platform_3">Artamon Platform 3</string>
+    <string name="on_time">On Time</string>
+    <string name="ahfield">Ahfield</string>
+    <string name="_15_01">15:01</string>
 </resources>

@@ -20,6 +20,7 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -28,33 +29,36 @@ public class MainActivity extends AppCompatActivity {
     private TrainAdapter mTrainAdapter;
 
 
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
 
         initData();
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        FloatingActionButton fab = findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                initData();
-                initRecycler();
+                trains.add(new Train("Berowra Platform 3", "12 \nmins", "Late", "Beverly", "15:18"));
                 mTrainAdapter.notifyDataSetChanged();
+//                initRecycler();
+
             }
         });
 
     }
 
     private void initData() {
-        trains.add(new Train("Artarmion Platform 3", "7", "On Time", "Ashfield", "15:01"));
-        initRecycler();
+
+            trains.add(new Train("Albion Platform 1", new Random().nextInt(20) +" \nmins", "On Time", "Allawah", "14:11"));
+            trains.add(new Train("Amcliffe Platform 2", new Random().nextInt(20) +" \nmins", "Late", "Central", "14:34"));
+            trains.add(new Train("Artarmion Platform 3", new Random().nextInt(20) +" \nmins", "On Time", "Ahfield", "15:01"));
+            trains.add(new Train("Berowra Platform 3", new Random().nextInt(20) +" \nmins", "Late", "Beverly", "15:18"));
+            initRecycler();
     }
 
     private void initRecycler() {
@@ -92,6 +96,11 @@ public class MainActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
+
+    /*
+        Spinner Refresh Async Task to refresh all recycler view's Arrival time
+     */
+
     private class SpinnerRefreshAsyncTask extends AsyncTask<Void, Void, Void> {
         private ProgressBar pBar = findViewById(R.id.pbar);
         @Override
@@ -115,12 +124,10 @@ public class MainActivity extends AppCompatActivity {
         @Override
         protected void onPostExecute(Void aVoid) {
 
-            pBar.setVisibility(View.INVISIBLE);
-//            mTrainRecyclerView.setVisibility(View.VISIBLE);
+            pBar.setVisibility(View.GONE);
+            mTrainRecyclerView.setVisibility(View.VISIBLE);
             initData();
             initRecycler();
-
-
         }
     }
 

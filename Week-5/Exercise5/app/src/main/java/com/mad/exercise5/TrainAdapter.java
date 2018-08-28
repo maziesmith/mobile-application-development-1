@@ -14,15 +14,23 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import org.w3c.dom.Text;
+
 import java.util.List;
 import java.util.Random;
 
+/* 
+    TrainAdapter calls helps to adapt the recycler view of Trains
+ */
 
 public class TrainAdapter extends RecyclerView.Adapter<TrainAdapter.ViewHolder> {
     private Context context;
     private List<Train> trains;
 
 
+    /* 
+        ViewHolder for TrainAdapter
+     */
     public class ViewHolder extends RecyclerView.ViewHolder {
         public TextView arrivalTime, platform, status, destination_time, destination;
         public ProgressBar progressBar;
@@ -40,7 +48,7 @@ public class TrainAdapter extends RecyclerView.Adapter<TrainAdapter.ViewHolder> 
     }
 
 
-
+    //Constructor
     public TrainAdapter(Context context, List<Train> trains) {
         this.trains=trains;
         this.context = context;
@@ -55,13 +63,14 @@ public class TrainAdapter extends RecyclerView.Adapter<TrainAdapter.ViewHolder> 
         return new ViewHolder(itemView);
     }
 
+    //To bind view to the holder 
     @Override
     public void onBindViewHolder(@NonNull final ViewHolder holder, final int position) {
         final Train train = trains.get(position);
         holder.destination_time.setText(train.getDestinationTime());
         holder.destination.setText(train.getDestination());
         holder.platform.setText(train.getPlatform());
-        if(train.getStatus().equals("Late")){
+        if(train.getStatus().equals(context.getString(R.string.late))){
             holder.status.setTextColor(Color.RED);
             holder.status.setText(train.getStatus());
         } else {
@@ -80,9 +89,6 @@ public class TrainAdapter extends RecyclerView.Adapter<TrainAdapter.ViewHolder> 
                 Toast.makeText(context,context.getString(R.string.refresh) + train.getDestination(), Toast.LENGTH_SHORT).show();
 //                holder.progressBar.setVisibility(View.VISIBLE);
                 new SpinnerRefreshGreenAsyncTask(holder,position).execute();
-//                holder.progressBar.setVisibility(View.INVISIBLE);
-
-
             }
 
         });
@@ -91,8 +97,8 @@ public class TrainAdapter extends RecyclerView.Adapter<TrainAdapter.ViewHolder> 
 
 
 
-
-    @Override   //Get the number of items in the train list
+    //Get the number of items in the train list
+    @Override   
     public int getItemCount() {
         return trains.size();
     }
@@ -102,6 +108,10 @@ public class TrainAdapter extends RecyclerView.Adapter<TrainAdapter.ViewHolder> 
 //    }
 
 
+
+    /* 
+        Spinner Refresh Async Task  For Green Linear Layout
+     */
     public class SpinnerRefreshGreenAsyncTask extends AsyncTask<Void, Void, Void> {
 
 
@@ -128,7 +138,7 @@ public class TrainAdapter extends RecyclerView.Adapter<TrainAdapter.ViewHolder> 
         @Override
         protected void onPreExecute() {
 
-            holder.arrivalTime.setVisibility(View.INVISIBLE);
+            holder.arrivalTime.setVisibility(View.GONE);
             holder.progressBar.setVisibility(View.VISIBLE);
             
 
@@ -136,12 +146,12 @@ public class TrainAdapter extends RecyclerView.Adapter<TrainAdapter.ViewHolder> 
 
         @Override
         protected void onPostExecute(Void aVoid) {
-            holder.progressBar.setVisibility(View.INVISIBLE);
+
+            holder.progressBar.setVisibility(View.GONE);
             final Train train = trains.get(position);
-            Random x = new Random(10);
+            holder.arrivalTime.setVisibility(View.VISIBLE);
+            holder.arrivalTime.setText(new Random().nextInt(20)+ "\n mins");
 
-
-            holder.arrivalTime.setText(String.valueOf(x));
         }
 
     }
