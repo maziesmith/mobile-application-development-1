@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="on_time_and_late">
+        <item>On Time</item>
+        <item>Late</item>
+    </string-array>
+</resources>

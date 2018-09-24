@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    tools:context=".CreateAccount">
+    <!--Team mate log-->
+    <ImageView
+        android:id="@+id/teammate_signin"
+        android:layout_width="200sp"
+        android:layout_height="142dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:paddingTop="100sp"
+        android:src="@drawable/teammates" />
+
+
+    <!--Sign In Text View-->
+    <TextView
+        android:id="@+id/createAnAcount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="149dp"
+        android:text="@string/create_an_account"
+        android:textColor="@android:color/background_dark"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <!--Enter your Email Address -->
+    <EditText
+        android:id="@+id/emailSignUp"
+        android:layout_width="241dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="207dp"
+        android:drawableLeft="@drawable/user"
+        android:hint="@string/enter_your_email_address" />
+
+
+
+    <!--ENter Yur password-->
+    <EditText
+        android:id="@+id/passwordSignUp"
+        android:layout_width="240dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="249dp"
+        android:drawableLeft="@drawable/key"
+        android:hint="@string/enter_your_password" />
+
+    <EditText
+        android:id="@+id/passwordSignUp2"
+        android:layout_width="241dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="178dp"
+        android:drawableLeft="@drawable/key"
+        android:hint="@string/confirm_password" />
+
+    <!--Sign in Button-->
+    <Button
+        android:id="@+id/buttonSignUp"
+        android:layout_width="265dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="91dp"
+        android:backgroundTint="@color/team"
+        android:text="@string/next"
+        android:textColor="@android:color/white" />
+
+    <ProgressBar
+        android:visibility="gone"
+        android:id="@+id/pBarSignUp"
+        android:layout_width="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:layout_height="wrap_content" />
+
+</RelativeLayout>

@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Teammates</string>
+    <string name="sign_in">Sign In</string>
+    <string name="please_sign_in_to_continue">Please sign in to continue</string>
+    <string name="enter_your_email_address"> Enter your email address</string>
+    <string name="enter_your_password">Enter your password</string>
+    <string name="forget_password">Forget Password?</string>
+    <string name="dont_have_one">Dont have one?</string>
+    <string name="create_one">Create One.</string>
+    <string name="create_an_account">Create an account</string>
+    <string name="next">Next</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="for_better_teams">For Better Teams</string>
+    <string name="get_started">Get Started</string>
+    <string name="sign_up">Sign up</string>
+</resources>
