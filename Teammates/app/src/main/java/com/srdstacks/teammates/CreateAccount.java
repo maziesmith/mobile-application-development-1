@@ -35,10 +35,12 @@ public class CreateAccount extends AppCompatActivity implements View.OnClickList
         pBarSignUp = findViewById(R.id.pBarSignUp);
 
 
-        findViewById(R.id.buttonSignUp).setOnClickListener(this);
+        findViewById(R.id.nextSignUp).setOnClickListener(this);
 
         mAuth = FirebaseAuth.getInstance();
     }
+
+    //Responsible for registration of user
 
     private void registerUser() {
         String email = emailET.getText().toString().trim();
@@ -81,10 +83,10 @@ public class CreateAccount extends AppCompatActivity implements View.OnClickList
 
                 pBarSignUp.setVisibility(View.GONE);
                 if(task.isSuccessful()){
-//                    startActivity(new Intent(CreateAccount.this, University.class));
-                    Toast.makeText(getApplicationContext(), "Sucessfully Registered", Toast.LENGTH_SHORT).show();
+                    startActivity(new Intent(CreateAccount.this, University.class));
+                    Toast.makeText(CreateAccount.this, "Sucessfully Registered", Toast.LENGTH_SHORT).show();
                 } else {
-                    Toast.makeText(getApplicationContext(), "Server Error, Try Again", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(CreateAccount.this, "Server Error, Try Again", Toast.LENGTH_SHORT).show();
                 }
             }
         });
@@ -92,12 +94,10 @@ public class CreateAccount extends AppCompatActivity implements View.OnClickList
 
     }
 
-
-
     @Override
     public void onClick(View view) {
         switch (view.getId()){
-            case R.id.emailSignUp:
+            case R.id.nextSignUp:
                 registerUser();
                 break;
         }

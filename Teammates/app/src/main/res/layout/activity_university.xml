@@ -1,13 +1,54 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".University">
+    <!--Team mate log-->
+    <ImageView
+        android:id="@+id/teammate_signin"
+        android:layout_width="200sp"
+        android:layout_height="142dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:paddingTop="100sp"
+        android:src="@drawable/teammates" />
+
+
+    <!--Sign In Text View-->
     <TextView
+        android:id="@+id/uni"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Choose University"/>
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="168dp"
+        android:text="@string/choose_your_university"
+        android:textColor="@android:color/background_dark"
+        android:textSize="20sp"
+        android:textStyle="bold" />
 
-</android.support.constraint.ConstraintLayout>
+    <EditText
+        android:id="@+id/emailSignIn"
+        android:layout_width="241dp"
+        android:drawableLeft="@drawable/user"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="230dp"
+        android:hint="@string/choose_your_university"
+        android:drawableStart="@drawable/user" />
+
+    <Button
+        android:layout_width="224dp"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/teammate_signin"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="91dp"
+        android:text="@string/next"
+        android:backgroundTint="@color/team"
+        android:textColor="@android:color/white"
+        android:layout_alignRight="@+id/teammate_signin"
+        tools:ignore="UnusedAttribute" />
+</RelativeLayout>

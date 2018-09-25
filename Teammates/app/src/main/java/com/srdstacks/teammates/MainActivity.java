@@ -14,20 +14,18 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         btn = findViewById(R.id.getStarted);
-//        System.out.print(btn);
-//        btn.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Intent intent = new Intent(MainActivity.this, SignIn.class);
-//                startActivity(intent);
-//            }
-//        });
+        System.out.print(btn);
+        btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, SignIn.class));
+            }
+        });
 
 
     }
 
     public void mainSignUp(View view) {
-        Intent intent = new Intent(MainActivity.this, SignIn.class);
-        startActivity(intent);
+        startActivity(new Intent(MainActivity.this, SignIn.class));
     }
 }

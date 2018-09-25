@@ -79,6 +79,7 @@
 
     <!--Sign in Button-->
     <Button
+        android:id="@+id/buttonSignIn"
         android:layout_width="224dp"
         android:layout_height="wrap_content"
         android:layout_alignEnd="@+id/teammate_signin"
@@ -87,7 +88,8 @@
         android:text="@string/sign_in"
         android:backgroundTint="@color/team"
         android:textColor="@android:color/white"
-        android:layout_alignRight="@+id/teammate_signin" />
+        android:layout_alignRight="@+id/teammate_signin"
+        android:onClick="signInHandler"/>
 
     <!--No accoount? Create One-->
     <LinearLayout
